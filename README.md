@@ -1,3 +1,6 @@
+# url to this repo: bit.ly/npmscriptsftw
+# me: @k88hudson on everywhere
+
 # npm scripts demo
 
 ## Why?
