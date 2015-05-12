@@ -1,25 +1,42 @@
 {
   "name": "npmscripttest",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prepublish": "echo PREPUBLISH",
-    "publish": "echo PUBLISH",
-    "postpublish": "echo PREPUBLISH",
-    "preinstall": "echo PREINSTALL",
-    "install": "echo INSTALL",
-    "postinstall": "echo POSTINSTALL",
-    "preuninstall": "echo PREINSTALL",
-    "uninstall": "echo UNINSTALL",
-    "postuninstall": "echo POSTINSTALL",
-    "start": "echo START",
-    "prestart": "echo START #foobar",
-    "poststart": "echo POSTSTART"
+    "test": "mocha -R spec test",
+    "build": "npm-run-all build:**",
+    "start": "npm run build && npm-run-all --parallel server watch:**",
+
+    "build:static": "cpx \"src/static/**/*\" www",
+    "watch:static": "npm run build:static -- -w",
+
+    "build:js": "webpack",
+    "watch:js": "npm run build:js -- --watch",
+
+    "build:css": "npm run watch:css -- --no-watch",
+    "watch:css": "autoless --source-map src www",
+
+    "server": "live-server www --port=4242"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "k88hudson",
+  "license": "MPL-2.0",
   "dependencies": {
-    "underscore": "^1.8.3"
+    "react": "^0.13.3"
+  },
+  "engines": {
+    "npm": ">=2.0.0"
+  },
+  "devDependencies": {
+    "autoless": "^0.1.7",
+    "babel-core": "^5.2.17",
+    "babel-loader": "^5.0.0",
+    "cpx": "^1.1.6",
+    "jsx-loader": "^0.13.2",
+    "live-server": "^0.7.1",
+    "mocha": "^2.2.4",
+    "node-libs-browser": "^0.5.0",
+    "npm-run-all": "^1.2.4",
+    "webpack": "^1.9.4"
   }
 }
