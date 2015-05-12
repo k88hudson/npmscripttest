@@ -1,0 +1,25 @@
+{
+  "name": "npmscripttest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "echo PREPUBLISH",
+    "publish": "echo PUBLISH",
+    "postpublish": "echo PREPUBLISH",
+    "preinstall": "echo PREINSTALL",
+    "install": "echo INSTALL",
+    "postinstall": "echo POSTINSTALL",
+    "preuninstall": "echo PREINSTALL",
+    "uninstall": "echo UNINSTALL",
+    "postuninstall": "echo POSTINSTALL",
+    "start": "echo START",
+    "prestart": "echo START #foobar",
+    "poststart": "echo POSTSTART"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
