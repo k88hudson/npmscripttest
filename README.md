@@ -2,6 +2,12 @@
 
 npm scripts for the win!
 
+## Remember!
+
+* Pass arguments to scripts like this `npm run script -- -w -c -p`
+* Always use double quotes "\"foo\"", not single quotes, to support Windows
+* Put quotes around globs to prevent bash from expanding them
+
 ## Webpack
 
 See [webpack cli docs](https://github.com/webpack/docs/wiki/cli)
@@ -20,3 +26,10 @@ See [browserify docs](https://github.com/substack/node-browserify#usage)
 * With source maps `browserify src/index.js -d -o www/index.bundle.js`
 * With minification `browserify src/index.js | uglifyjs -c --mangle > www/index.bundle.js`
 * With es6, react, transforms `browserify -e src/index.jsx -t [reactify --es6] -o www/index.bundle.js`
+
+## Unix-like utilities
+
+* & => npm-run-script --parallel
+* rm => rimraf
+* cp => cpx
+* cat => catw
